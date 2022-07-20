@@ -11,7 +11,7 @@ class Solution {
             }
             map.get(sorted).add(current);        // map.get(listKey).add(newValue);
         }
-        anagram.addAll(map.values());
+        anagram.addAll(map.values());           //The main function of the addAll() method in Java is to add elements into a Java collection. 
         return anagram;
     }
 }
