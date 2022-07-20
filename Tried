@@ -1,0 +1,23 @@
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> anagram = new ArrayList<>();
+        HashMap<String, List<String>> map = new HashMap<>();
+        for( String current : strs ){
+            char[] ch = current.toCharArray();
+            Arrays.sort( ch );
+            String sorted = new String( ch );
+            if( !map.containsKey(sorted) ){      // if map doesn't contain the sorted version of String sorted
+                map.put(sorted, new ArrayList<>());    
+            }
+            map.get(sorted).add(current);        // map.get(listKey).add(newValue);
+        }
+        anagram.addAll(map.values());
+        return anagram;
+    }
+}
+
+https://youtu.be/ptgykfAEax8 - Code Soln.
+https://www.youtube.com/watch?v=NNBQik4phMI - Another Soln.
+
+The soln. is we declare a hashmap of sorted string as key and the respective anagrams as their values.
+Then add all the anagrams.
